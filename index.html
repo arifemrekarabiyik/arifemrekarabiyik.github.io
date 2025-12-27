@@ -3,47 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArifEmreKarabiyik</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>root@kali:~</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="bg-animation">
-        <div class="scanline"></div>
+    <div class="terminal">
+        <div id="output"></div>
+        <div class="input-line">
+            <span class="prompt">root@kali:~$</span>
+            <input type="text" id="command-input" autocomplete="off" autofocus>
+        </div>
     </div>
-
-    <div class="container">
-        <header>
-            <h1 class="glitch" data-text="ADINIZ SOYADINIZ">ARIF EMRE KARABIYIK</h1>
-            <h2>Cyber Sec Enthusiastic & Computer Science Student</h2>
-        </header>
-
-        <section class="bio">
-             <p>
-                <span class="prompt">root@kali:~#</span> Developer by day, security researcher by night. I create bugs just to have the satisfaction of fixing them. sudo4ever...
-            </p>
-        </section>
-
-        <section class="actions">
-            <a href="cv.pdf" class="btn-cv" download>
-                <i class="fas fa-file-download"></i> CV Download (PDF)
-            </a>
-        </section>
-
-        <footer>
-            <div class="social-links">
-                <a href="https://github.com/arifemrekarabiyik" target="_blank" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://linkedin.com/in/v1rg0" target="_blank" title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://instagram.com/arif_emrk" target="_blank" title="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
-            <p class="terminal-foot">© made by V1rg0</p>
-        </footer>
-    </div>
+    <script src="script.js"></script>
 </body>
 </html>
