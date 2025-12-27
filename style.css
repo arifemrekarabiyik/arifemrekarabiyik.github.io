@@ -1,157 +1,63 @@
-/* Google Fonts'tan 'Roboto Mono' (Terminal görünümlü font) çekiyoruz */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap');
 
-:root {
-    --bg-color: #020c1b; /* Çok koyu lacivert/siyah arka plan */
-    --text-color: #ccd6f6; /* Açık gri metin */
-    --accent-color: #64ffda; /* Neon nane yeşili (Ana vurgu) */
-    --secondary-color: #0a192f; /* İkincil koyu renk */
-}
-
-body, html {
+body {
+    background-color: #0c0c0c; /* Terminal siyahı */
+    color: #00ff00; /* Klasik hacker yeşili */
+    font-family: 'Ubuntu Mono', monospace;
     margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'Roboto Mono', monospace; /* Terminal fontu */
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    overflow: hidden; /* Animasyonun taşmasını engelle */
-}
-
-/* --- Arka Plan Animasyonu (Cyberpunk Grid ve Tarama Çizgisi) --- */
-.bg-animation {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-image: 
-        linear-gradient(rgba(100, 255, 218, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(100, 255, 218, 0.05) 1px, transparent 1px);
-    background-size: 30px 30px;
-    perspective: 500px;
-    transform: scale(1.2);
-}
-
-/* Yukarıdan aşağıya inen tarama çizgisi efekti */
-.scanline {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, transparent, rgba(100, 255, 218, 0.1) 50%, transparent);
-    position: absolute;
-    top: -100%;
-    animation: scan 6s linear infinite;
-    opacity: 0.5;
-}
-
-@keyframes scan {
-    0% { top: -100%; }
-    100% { top: 100%; }
-}
-
-/* --- Ana İçerik Düzeni --- */
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding: 20px;
     height: 100vh;
-    text-align: center;
-    padding: 20px;
-    /* İçeriğin daha rahat okunması için merkeze hafif bir karartma */
-    background: radial-gradient(circle at center, rgba(2, 12, 27, 0.8) 0%, rgba(2, 12, 27, 1) 100%);
-    z-index: 10;
-    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    color: var(--accent-color);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.terminal {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto; /* Yazılar dolunca aşağı kayabilsin */
 }
 
-h2 {
-    font-size: 1.3em;
-    color: #8892b0;
-    margin-bottom: 30px;
-    font-weight: 400;
+/* Çıktıların stili */
+#output div {
+    margin-bottom: 5px;
+    white-space: pre-wrap; /* Uzun metinleri satıra sığdır */
 }
 
-.bio {
-    max-width: 600px;
-    margin-bottom: 40px;
-    font-size: 1em;
-    line-height: 1.6;
-    background-color: rgba(10, 25, 47, 0.5);
-    padding: 20px;
-    border-radius: 5px;
-    border: 1px solid #172a45;
+/* Giriş satırı */
+.input-line {
+    display: flex;
+    align-items: center;
 }
 
 .prompt {
-    color: var(--accent-color);
+    color: #ff3b3b; /* Kali'deki gibi root prompt kırmızı olsun */
     margin-right: 10px;
     font-weight: bold;
 }
 
-/* --- CV Butonu Stili --- */
-.btn-cv {
-    display: inline-block;
-    padding: 15px 35px;
-    border: 2px solid var(--accent-color);
-    color: var(--accent-color);
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 4px;
-    transition: all 0.3s ease;
+input {
     background: transparent;
-    position: relative;
-    overflow: hidden;
-    letter-spacing: 1px;
+    border: none;
+    color: #ffffff; /* Yazılan yazı beyaz */
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 16px;
+    flex-grow: 1;
+    outline: none;
 }
 
-.btn-cv:hover {
-    background: rgba(100, 255, 218, 0.1);
-    box-shadow: 0 0 15px rgba(100, 255, 218, 0.3);
-    transform: translateY(-3px);
+/* Linklerin rengi */
+a {
+    color: #3b8eea;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
 }
 
-.btn-cv i {
-    margin-right: 8px;
+/* Kaydırma çubuğu özelleştirme (Webkit) */
+::-webkit-scrollbar {
+    width: 10px;
 }
-
-/* --- Sosyal Medya İkonları --- */
-footer {
-    margin-top: 60px;
-}
-
-.social-links a {
-    color: #8892b0;
-    font-size: 2em;
-    margin: 0 20px;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-.social-links a:hover {
-    color: var(--accent-color);
-    transform: translateY(-5px) scale(1.1);
-    text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
-}
-
-.terminal-foot {
-    margin-top: 20px;
-    font-size: 0.8em;
-    color: #8892b0;
-    opacity: 0.7;
-}
-
-/* Mobilde yazı boyutlarını küçült */
-@media (max-width: 768px) {
-    h1 { font-size: 1.8em; }
-    h2 { font-size: 1em; }
-    .social-links a { font-size: 1.7em; margin: 0 15px; }
+::-webkit-scrollbar-thumb {
+    background: #333; 
 }
