@@ -5,26 +5,26 @@ const terminal = document.querySelector('.terminal');
 // SİTE AÇILDIĞINDA GÖRÜNEN BAŞLANGIÇ MESAJI
 const welcomeMessage = `
 <span style="color: #00ff00;">
-  ____      _                 ____            
- / ___|   _| |__   ___ _ __  / ___|  ___  ___ 
-| |  | | | | '_ \\ / _ \\ '__| \\___ \\ / _ \\/ __|
-| |__| |_| | |_) |  __/ |     ___) |  __/ (__ 
- \\____\\__,_|_.__/ \\___|_|    |____/ \\___|\\___| v1.0
+'     _ _  _  ___  __   _  
+'    | | |/o|| o \/ _| / \ 
+'    | V | |||   ( |_n( o )
+'     \_/  L||_|\\\__/ \_/ 
+'                          
 </span>
 
-Sisteme hoşgeldiniz. Erişim yetkisi: <span style="color:red">ROOT</span>
-Mevcut komutları görmek için 'help' yazın.
+Welcome to the system. Access permissions: <span style="color:red">ROOT</span>
+To see the available commands, type 'help'.
 ------------------------------------------------------
 `;
 
 // Komutların Tanımlandığı Yer
 const commands = {
-    help: "Kullanılabilir komutlar: <br> - whoami <br> - cat cv.txt <br> - apt install linkedin <br> - apt install github <br> - social <br> - clear",
-    whoami: "Ziyaretçi (Guest) - Ama ben bir Siber Güvenlik Öğrencisiyim.",
-    social: "Instagram: @kullaniciadi <br> Twitter: @kullaniciadi",
-    "cat cv.txt": "CV indiriliyor... <br> (Tarayıcınız indirmeyi engellerse <a href='cv.pdf' target='_blank'>buraya tıklayın</a>)",
-    sudo: "Burada yetkili zaten benim :)",
-    ls: "cv.txt  projects/  passwords.txt (Erişim Engellendi)"
+    help: "Available commands: <br> - whoami <br> - cat cv.txt <br> - apt install linkedin <br> - apt install github <br> - social <br> - clear",
+    whoami: "Guest - But i am a cyber sec enthusiastic & computer science student.",
+    social: "Instagram: @arif_emrk <br>",
+    "cat cv.txt": "CV indiriliyor... <br> (If your browser blocks the download<a href='cv.pdf' target='_blank'>Click here</a>)",
+    sudo: "I'm in charge here anyway :)",
+    ls: "cv.txt  projects/  passwords.txt (Access denied)"
 };
 
 // Sayfa yüklendiğinde karşılama mesajını bas
@@ -63,14 +63,14 @@ function processCommand(cmd) {
     
     // LinkedIn Komutu
     else if (lowerCmd.includes('linkedin')) {
-        printOutput("LinkedIn profili yeni sekmede açılıyor...");
-        window.open('https://linkedin.com/in/SENINKULLANICIADIN', '_blank');
+        printOutput("LinkedIn profile opens in a new tab....");
+        window.open('https://linkedin.com/in/v1rg0', '_blank');
     }
     
     // GitHub Komutu
     else if (lowerCmd.includes('github')) {
-        printOutput("GitHub profili açılıyor...");
-        window.open('https://github.com/SENINKULLANICIADIN', '_blank');
+        printOutput("GitHub profile opens in a new tab....");
+        window.open('https://github.com/arifemrekarabiyik', '_blank');
     }
 
     // CV İndirme Komutu (cat cv.txt)
