@@ -22,7 +22,7 @@ const commands = {
     help: "Available commands: <br> - whoami <br> - cat cv.txt <br> - apt install linkedin <br> - apt install github <br> - social <br> - clear",
     whoami: "Guest - But i am a cyber sec enthusiastic & computer science student.",
     social: "Instagram: @arif_emrk <br>",
-    "cat cv.txt": "CV indiriliyor... <br> (If your browser blocks the download<a href='cv.pdf' target='_blank'>Click here</a>)",
+    "cat cv.txt": "CV downloading... <br> (If your browser blocks the download<a href='cv.pdf' target='_blank'>Click here</a>)",
     sudo: "I'm in charge here anyway :)",
     ls: "cv.txt  projects/  passwords.txt (Access denied)"
 };
